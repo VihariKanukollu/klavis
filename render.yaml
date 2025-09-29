@@ -2,13 +2,14 @@ services:
   # Single service running all MCPs - only $7/month!
   - type: web
     name: mcp-all-in-one
+    runtime: docker
     repo: https://github.com/VihariKanukollu/klavis
     autoDeploy: true
     branch: main
     region: oregon
     plan: starter
+    dockerCommand: 
     dockerfilePath: ./multi-mcp.Dockerfile
-    dockerContext: .
     envVars:
       - key: NODE_ENV
         value: production
