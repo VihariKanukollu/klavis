@@ -13,6 +13,3 @@ services:
       - key: NODE_ENV
         value: production
     healthCheckPath: /healthz
-    domains:
-      - domain: mcp.browzy.ai
-        wildcard: false
