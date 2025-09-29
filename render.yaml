@@ -12,45 +12,50 @@ services:
         value: "8080"
     healthCheckPath: /healthz
 
-  # All 50+ Klavis MCP servers (private services)
+  # All 50+ Klavis MCP servers (internal web services)
   
   # CRM & Sales/RevOps
-  - type: privateService
+  - type: web
     name: mcp-affinity
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/affinity/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-attio
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/attio/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-close
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/close/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-hubspot
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/hubspot/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-salesforce
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/salesforce/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-gong
     env: docker
     rootDir: .
@@ -58,42 +63,48 @@ services:
     autoDeploy: true
 
   # Project & Issue Tracking
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-asana
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/asana/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-clickup
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/clickup/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-jira
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/jira/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-linear
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/linear/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-monday
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/monday/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-motion
     env: docker
     rootDir: .
@@ -101,7 +112,8 @@ services:
     autoDeploy: true
 
   # Support & Helpdesk
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-freshdesk
     env: docker
     rootDir: .
@@ -109,14 +121,16 @@ services:
     autoDeploy: true
 
   # Marketing & Outreach
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-mailchimp
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/mailchimp/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-resend
     env: docker
     rootDir: .
@@ -124,56 +138,64 @@ services:
     autoDeploy: true
 
   # Communication & Meetings
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-slack
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/slack/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-discord
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/discord/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-gmail
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/gmail/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-google-calendar
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/google_calendar/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-google-meet
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/google_meet/dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-twilio
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/twilio/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-whatsapp
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/whatsapp/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-cal-com
     env: docker
     rootDir: .
@@ -181,63 +203,72 @@ services:
     autoDeploy: true
 
   # Files, Docs & Knowledge
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-confluence
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/confluence/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-notion
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/notion/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-google-docs
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/google_docs/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-google-sheets
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/google_sheets/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-google-slides
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/google_slides/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-google-drive
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/google_drive/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-dropbox
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/dropbox/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-onedrive
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/onedrive/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-wordpress
     env: docker
     rootDir: .
@@ -245,21 +276,24 @@ services:
     autoDeploy: true
 
   # Databases & Data Platforms
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-postgres
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/postgres/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-supabase
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/supabase/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-airtable
     env: docker
     rootDir: .
@@ -267,35 +301,40 @@ services:
     autoDeploy: true
 
   # E-commerce, Payments & Finance
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-shopify
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/shopify/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-stripe
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/stripe/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-quickbooks
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/quickbooks/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-moneybird
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/moneybird/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-coinbase
     env: docker
     rootDir: .
@@ -303,7 +342,8 @@ services:
     autoDeploy: true
 
   # Developer Tools
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-github
     env: docker
     rootDir: .
@@ -311,42 +351,48 @@ services:
     autoDeploy: true
 
   # Search, Research & Web Crawling
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-brave-search
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/brave_search/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-exa
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/exa/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-tavily
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/tavily/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-firecrawl
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/firecrawl/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-firecrawl-deep-research
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/firecrawl_deep_research/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-hacker-news
     env: docker
     rootDir: .
@@ -354,21 +400,24 @@ services:
     autoDeploy: true
 
   # Social & Media
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-linkedin
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/linkedin/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-youtube
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/youtube/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-spotify
     env: docker
     rootDir: .
@@ -376,42 +425,48 @@ services:
     autoDeploy: true
 
   # AI/LLM & Content Utilities
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-openrouter
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/openrouter/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-heygen
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/heygen/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-markitdown
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/markitdown/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-pandoc
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/pandoc/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-report-generation
     env: docker
     rootDir: .
     dockerfilePath: mcp_servers/report_generation/Dockerfile
     autoDeploy: true
 
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-mem0
     env: docker
     rootDir: .
@@ -419,7 +474,8 @@ services:
     autoDeploy: true
 
   # Jobs & Recruiting
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-google-jobs
     env: docker
     rootDir: .
@@ -427,7 +483,8 @@ services:
     autoDeploy: true
 
   # Analytics & BI
-  - type: privateService
+  - type: web
+    plan: starter
     name: mcp-mixpanel
     env: docker
     rootDir: .
