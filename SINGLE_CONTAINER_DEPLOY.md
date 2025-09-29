@@ -11,8 +11,8 @@ This guide shows how to deploy all Klavis MCP servers in a single container, sav
 
 ```bash
 cd /Users/vihari/Desktop/browzy/klavis
-git add supervisord.conf nginx-internal.conf multi-mcp.Dockerfile render-single-container.yaml
-git commit -m "Add single-container setup for all MCPs"
+git add supervisord-v2.conf nginx-internal.conf multi-mcp-v2.Dockerfile render.yaml start-mcp.sh
+git commit -m "Fix: Proper multi-language MCP server deployment"
 git push origin main
 ```
 
@@ -21,10 +21,19 @@ git push origin main
 1. Go to https://dashboard.render.com/
 2. Click "New +" → "Blueprint"
 3. Connect your GitHub repository: `VihariKanukollu/klavis`
-4. Select `render-single-container.yaml` as the blueprint file
+4. Select `render.yaml` as the blueprint file (or it will be auto-detected)
 5. Click "Create Blueprint Instance"
 
 This will create ONE service called `mcp-all-in-one` that runs all 50+ MCP servers.
+
+## Step 2.5: Add Custom Domain in Render
+
+After the service is created:
+1. Click on the `mcp-all-in-one` service in Render dashboard
+2. Go to "Settings" tab
+3. Under "Custom Domains", click "Add Custom Domain"
+4. Enter `mcp.browzy.ai`
+5. Follow the instructions to verify domain ownership
 
 ## Step 3: Configure Cloudflare DNS
 
