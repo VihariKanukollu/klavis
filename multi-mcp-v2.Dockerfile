@@ -61,7 +61,7 @@ RUN for dir in /app/mcp_servers/*/; do \
 
 # Copy configuration files
 COPY supervisord-v2.conf /etc/supervisor/conf.d/supervisord.conf
-COPY nginx-simple.conf /etc/nginx/nginx.conf
+COPY nginx-complete.conf /etc/nginx/nginx.conf
 COPY start-mcp.sh /app/start-mcp.sh
 RUN chmod +x /app/start-mcp.sh
 
